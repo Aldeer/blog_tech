@@ -1,3 +1,14 @@
 from django.db import models
 
-# Create your models here.
+
+class Comentario(models.Model):
+    """
+    Clase modelo de Comentario
+    Campos:
+        - id_comentario:
+        - comentario:
+        - id_publicacion:
+        - id_autor:
+    """
+
+    comentario = models.TextField(verbose_name='Comentario')
