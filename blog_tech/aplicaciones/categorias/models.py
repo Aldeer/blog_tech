@@ -7,7 +7,6 @@ class Categoria(models.Model):
     Campos:
         - id_categoria:
         - nombre:
-        - id_publicacion:
     """
 
     id_categoria = models.AutoField(primary_key=True, verbose_name='ID Categoria')
