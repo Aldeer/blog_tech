@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .forms import AutorForm, UserForm
+from django.shortcuts import render, redirect
+from .forms import UserForm
 
 
 def home(request):
@@ -8,8 +8,12 @@ def home(request):
 def registrar_autor(request):
     
     if request.method == 'POST':
-        pass
-    autor_form = AutorForm()
-    user_form = UserForm()
-    context = {'autor_form': autor_form, 'user_form': user_form}
+        registro_form = UserForm(request.POST)
+        if registro_form.is_valid():
+            registro_form.save()
+            return redirect('autores:home')
+    else:
+        registro_form = UserForm()
+    
+    context = {'registro_form': registro_form}
     return render(request, 'registro_autor.html', context)
