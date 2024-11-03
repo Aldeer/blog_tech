@@ -11,8 +11,7 @@
     <h1>Registro de Autor</h1>
     <form method="post">
         {% csrf_token %}
-        {{ user_form.as_p }}
-        {{ autor_form.as_p }}
+        {{ registro_form.as_p }}
         <button type="submit">Enviar</button>
     </form>
 {% endblock content %}
