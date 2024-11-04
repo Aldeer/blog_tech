@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .forms import UserForm, LoginForm
 
 
@@ -34,3 +34,9 @@ def login_autor(request):
         form = LoginForm()
     context = {'form': form}
     return render(request, 'login.html', context=context)
+
+
+def logout_autor(request):
+    print(request)
+    logout(request)
+    return redirect('autores:login')
