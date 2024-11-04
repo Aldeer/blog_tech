@@ -10,6 +10,7 @@
     
     {% if request.user.is_authenticated %}
         <h1>Bienvenido {{ request.user.username }}</h1>
+        <a href="{% url 'autores:logout' %}">cerrar sesion</a>
     {% else %}
         <h1>Bienvenido</h1>
     {% endif %}
