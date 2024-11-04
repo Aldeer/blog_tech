@@ -4,4 +4,16 @@
 {% block titulo %}
     Home
 {% endblock titulo %}
+
+
+{% block content %}
+    
+    {% if request.user.is_authenticated %}
+        <h1>Bienvenido {{ request.user.username }}</h1>
+    {% else %}
+        <h1>Bienvenido</h1>
+    {% endif %}
+        
+{% endblock content %}
+    
     
